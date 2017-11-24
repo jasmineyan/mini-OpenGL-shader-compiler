@@ -1,0 +1,183 @@
+Terminals unused in grammar
+
+   INT_NUM
+   FLOAT_NUM
+   INT_TYPE
+   FLOAT_TYPE
+   O_BRACKET
+   C_BRACKET
+   O_BRACE
+   C_BRACE
+   O_SQARE_B
+   C_SQARE_B
+   PLUS
+   MINUS
+   MUL
+   DIV
+   POWER
+   ASSIGN
+   BOOLEAN_TYPE
+   BOOLEAN_VALUE
+   NOT
+   AND
+   OR
+   EQUAL
+   NEQUAL
+   LESSTHAN
+   GREATERTHAN
+   LESSEQUAL
+   GREATEREQUAL
+   IF
+   ELSE
+   WHILE
+   VOID
+   IDENTIFIER
+   COMMA
+   SEMICOLON
+   COLON
+   CONST
+   VEC2
+   VEC3
+   VEC4
+   BVEC2
+   BVEC3
+   BVEC4
+   IVEC2
+   IVEC3
+   IVEC4
+
+
+Grammar
+
+    0 $accept: program $end
+
+    1 program: tokens
+
+    2 tokens: tokens token
+    3       | %empty
+
+    4 token: myToken1
+    5      | myToken2
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+error (256)
+myToken1 (258) 4
+myToken2 (259) 5
+INT_NUM (260)
+FLOAT_NUM (261)
+INT_TYPE (262)
+FLOAT_TYPE (263)
+O_BRACKET (264)
+C_BRACKET (265)
+O_BRACE (266)
+C_BRACE (267)
+O_SQARE_B (268)
+C_SQARE_B (269)
+PLUS (270)
+MINUS (271)
+MUL (272)
+DIV (273)
+POWER (274)
+ASSIGN (275)
+BOOLEAN_TYPE (276)
+BOOLEAN_VALUE (277)
+NOT (278)
+AND (279)
+OR (280)
+EQUAL (281)
+NEQUAL (282)
+LESSTHAN (283)
+GREATERTHAN (284)
+LESSEQUAL (285)
+GREATEREQUAL (286)
+IF (287)
+ELSE (288)
+WHILE (289)
+VOID (290)
+IDENTIFIER (291)
+COMMA (292)
+SEMICOLON (293)
+COLON (294)
+CONST (295)
+VEC2 (296)
+VEC3 (297)
+VEC4 (298)
+BVEC2 (299)
+BVEC3 (300)
+BVEC4 (301)
+IVEC2 (302)
+IVEC3 (303)
+IVEC4 (304)
+
+
+Nonterminals, with rules where they appear
+
+$accept (50)
+    on left: 0
+program (51)
+    on left: 1, on right: 0
+tokens (52)
+    on left: 2 3, on right: 1 2
+token (53)
+    on left: 4 5, on right: 2
+
+
+State 0
+
+    0 $accept: . program $end
+
+    $default  reduce using rule 3 (tokens)
+
+    program  go to state 1
+    tokens   go to state 2
+
+
+State 1
+
+    0 $accept: program . $end
+
+    $end  shift, and go to state 3
+
+
+State 2
+
+    1 program: tokens .
+    2 tokens: tokens . token
+
+    myToken1  shift, and go to state 4
+    myToken2  shift, and go to state 5
+
+    $default  reduce using rule 1 (program)
+
+    token  go to state 6
+
+
+State 3
+
+    0 $accept: program $end .
+
+    $default  accept
+
+
+State 4
+
+    4 token: myToken1 .
+
+    $default  reduce using rule 4 (token)
+
+
+State 5
+
+    5 token: myToken2 .
+
+    $default  reduce using rule 5 (token)
+
+
+State 6
+
+    2 tokens: tokens token .
+
+    $default  reduce using rule 2 (tokens)
