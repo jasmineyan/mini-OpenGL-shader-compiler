@@ -1,8 +1,18 @@
-Owners:
- 
+Phaser 3: AST constrution and semantic checking
+
+Owners: 
 Jianning Yan (1000461715)
 Wen Ying Zhang (1000404207)
- 
+
+Description:
+This phase is about constructiong abstract syntax trees(AST) and making three AST visitors: one that does semantic checking, one that de-allocates an AST, and one that prints an AST. The following will be implemented: AST constrution, AST tear-down, AST printing (-Da) and semantic checking.
+
+Starter Files:
+compiler467: revised mian module
+Makefile: revised makefile
+scanner.l: the workign Flex scanner
+parser.y: working Bison parser with full phase 2 functionality
+  
 We start by running the starter code and make sure the starter code has no error. 
 
 We implement the data structure for ast according to the parser the starter code provides. Then we develop our own symbol table to store variable types. 
