@@ -13,6 +13,15 @@ When the -Tn (trace scanner) switch is activated in the compiler, the global var
 Error Handling:
 If the scanner encouters an illegal input it should report an error. Use the yERROR(x) macro to report any error. Check for corner cases such as out of bounds integers, and identifiers that exceed the allowed length. 
 
+Starter Files:
+compiler467.c - The main module for the project
+Makefile - a makefile for the project
+scanner.l - the skeleton flex scanner
+parser.y - the skeleton bison parser
+compiler467.man - the man page for the compiler
+globalvars.c - the global variables
+common.h - the global definitions
+
 Special Problems Encouter:
 1. Understand the problem statement and the requirement of the lab
 2. Understand how to compile and run the starter
